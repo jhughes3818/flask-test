@@ -21,10 +21,9 @@ def observation_tuning():
     return 'Observation tuning'
 
 
-@app.route('/process-data', methods=['POST', 'GET'])
+@app.route('/process-data', methods=['POST'])
 def process_data():
     # Extract JSON data from request
-    print('process data')
     data = request.get_json()
     transcript = data['transcript']
     observations = data['observations']
@@ -57,7 +56,6 @@ def process_data():
 
     # Return the adjusted observations as JSON
     return jsonify(observations)
-    return 'hello world'
 
 
 
